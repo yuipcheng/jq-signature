@@ -121,6 +121,20 @@
     getDataURL: function() {
       return this.canvas.toDataURL();
     },
+    
+    // set line color
+    setLineColor: function (color) {
+        this.settings.lineColor = color;
+        this.ctx = this.canvas.getContext("2d");
+        this.ctx.strokeStyle = this.settings.lineColor;
+    },
+
+    // set line width in pixels
+    setLineWidth: function (width) {
+        this.settings.lineWidth = width;
+        this.ctx = this.canvas.getContext("2d");
+        this.ctx.lineWidth = this.settings.lineWidth;
+    },    
 
 		// Handle the start of a signature
 		_downHandler: function (e) {
